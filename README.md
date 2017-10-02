@@ -12,21 +12,37 @@ Python 3 (not tested on Python 2)
 
 ### Installing
 
-Not yet on PyPI, so install using [`pip`'s VCS support](https://pip.pypa.io/en/stable/reference/pip_install/#vcs-support):
+Clone, create a Python 3 virtual environment, and install requirements.
 
 ```
-pip install git+https://github.com/gregoryfoster/pydocket.git
+git clone https://github.com/gregoryfoster/pydocket.git
+cd pydocket
+virtualenv -p $(which python3) .venv
+source .venv/bin/activate
+pip install requirements.txt
 ```
+
+See the [`tests`](tests) and [`download.py`](download.py) for examples of usage.
 
 ## Running the tests
 
 Uses `pytest` fixtures and `VCR`.
 
 ```
-git clone https://github.com/gregoryfoster/pydocket.git
-pip install requirements.txt
 cd tests
 python test_pydocket.py
+```
+
+## Deployment
+
+Not yet on PyPI, so deploy using [`pip`'s VCS support](https://pip.pypa.io/en/stable/reference/pip_install/#vcs-support):
+
+```
+mkdir your_project
+cd your_project
+virtualenv -p $(which python3) .venv
+source .venv/bin/activate
+pip install git+https://github.com/gregoryfoster/pydocket.git
 ```
 
 ## Built With
