@@ -10,6 +10,8 @@ These instructions will get you a copy of the project up and running on your loc
 
 Python 3 (not tested on Python 2)
 
+You'll need to [acquire a Data.gov API Key](https://api.data.gov/signup/) to perform queries.
+
 ### Installing
 
 Clone, create a Python 3 virtual environment, and install requirements.
@@ -20,6 +22,14 @@ cd pydocket
 virtualenv -p $(which python3) .venv
 source .venv/bin/activate
 pip install requirements.txt
+```
+
+### Usage
+
+Export your Data.gov API key in your development environment to perform queries:
+
+```
+export DATA_GOV_API_KEY=[your_api_key_here]
 ```
 
 See the [`tests`](tests) and [`download.py`](download.py) for examples of usage.
